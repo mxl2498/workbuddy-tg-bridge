@@ -1,0 +1,8 @@
+# 忽略敏感与运行时文件
+config.json
+sessions.json
+bridge.log
+node_modules/
+package-lock.json
+*.tmp
+.DS_Store

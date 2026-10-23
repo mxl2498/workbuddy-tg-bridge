@@ -1,0 +1,19 @@
+{
+  "token": "PUT_YOUR_BOT_TOKEN_HERE",
+  "apiBase": "https://api.telegram.org",
+  "ownerChatIds": [],
+  "agentTimeoutMs": 600000,
+  "agent": {
+    "command": "C:/path/to/node.exe",
+    "args": [
+      "C:/path/to/node_modules/@tencent-ai/codebuddy-code/bin/codebuddy",
+      "-p", "{prompt}",
+      "--output-format", "text",
+      "--port", "63990"
+    ],
+    "cwd": "C:/path/to/your/workspace",
+    "env": {
+      "ACC_PRODUCT_CONFIG_PATH": "C:/path/to/node_modules/@tencent-ai/codebuddy-code/product.internal.json"
+    }
+  }
+}

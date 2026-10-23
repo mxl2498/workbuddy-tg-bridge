@@ -34,13 +34,10 @@ function loadConfig() {
   cfg.agentTimeoutMs = cfg.agentTimeoutMs || 10 * 60 * 1000;
   cfg.ownerChatIds = cfg.ownerChatIds || [];
   cfg.agent = cfg.agent || {
-    command: 'C:/Users/Administrator/.workbuddy/binaries/node/versions/22.22.2-6/node.exe',
-    args: [
-      'D:/WorkBuddy-Intl/WorkBuddyAI/resources/app.asar.unpacked/cli/bin/codebuddy',
-      '-p', '{prompt}',
-      '--output-format', 'text',
-    ],
-    cwd: 'C:/Users/Administrator/WorkBuddy/Claw',
+    // 默认值仅供示例，实际以 config.json 的 agent 段为准
+    command: process.env.AGENT_COMMAND || 'node',
+    args: (process.env.AGENT_ARGS || '-p,{prompt},--output-format,text').split(','),
+    cwd: process.env.AGENT_CWD || process.cwd(),
     env: {},
   };
   return cfg;

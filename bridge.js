@@ -252,6 +252,9 @@ async function main() {
   }
 }
 
+process.on('uncaughtException', e => log(`[crash] uncaughtException: ${e.stack || e.message}`));
+process.on('unhandledRejection', e => log(`[crash] unhandledRejection: ${e && (e.stack || e.message) || e}`));
+
 main().catch(e => {
   console.error('[bridge] 启动失败:', e.message);
   process.exit(1);
